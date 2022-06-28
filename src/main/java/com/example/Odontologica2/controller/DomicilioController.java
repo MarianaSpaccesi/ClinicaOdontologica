@@ -17,7 +17,7 @@ public class DomicilioController {
     @Autowired
     DomicilioService domicilioService;
 
-    @GetMapping
+    @GetMapping("/todos")
     public ResponseEntity<ArrayList<Domicilio>> mostrarDomicilios (){
         ArrayList<Domicilio> listarDomicilios = domicilioService.mostrarTodos();
         return ResponseEntity.ok(listarDomicilios);
@@ -28,7 +28,7 @@ public class DomicilioController {
         return domicilioService.mostrarPorId(id);
     }
 
-    @PostMapping
+    @PostMapping("/guardar")
     public Domicilio guardarDomicilio(@RequestBody Domicilio domicilio){
         return domicilioService.guardar(domicilio);
     }

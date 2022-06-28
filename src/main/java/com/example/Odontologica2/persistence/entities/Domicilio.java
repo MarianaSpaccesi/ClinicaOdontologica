@@ -9,7 +9,8 @@ import javax.persistence.*;
 public class Domicilio {
 
     @Id
-    @GeneratedValue(strategy =  GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "domicilio_sequence", sequenceName = "domicilio_sequence")
+    @GeneratedValue(strategy =  GenerationType.SEQUENCE, generator = "domicilio_sequence")
     @Column(name = "domicilio_id", nullable = false)
     private Integer id;
     private String calle;
@@ -17,7 +18,8 @@ public class Domicilio {
     private String localidad;
     private String provincia;
 
-    @OneToOne(mappedBy = "domicilio")
+    @OneToOne(mappedBy = "domicilio", cascade = CascadeType.ALL)
+    @JsonIgnore
     private Paciente paciente;
 
 

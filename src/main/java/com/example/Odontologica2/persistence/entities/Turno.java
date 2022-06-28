@@ -10,18 +10,17 @@ import java.util.Date;
 @Table(name = "turnos")
 public class Turno {
     @Id
-    @GeneratedValue(strategy =  GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "turno_sequence", sequenceName = "turno_sequence")
+    @GeneratedValue(strategy =  GenerationType.SEQUENCE, generator = "turno_sequence") //genera secuencia en turno, que los IDs tengan una secuencia propia
     @Column(name = "turno_id", nullable = false)
     private Integer id;
-
-
     private Date date;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "odontologo_id")
     private Odontologo odontologo;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "paciente_id")
     private Paciente paciente;
 

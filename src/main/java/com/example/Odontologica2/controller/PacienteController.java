@@ -18,7 +18,7 @@ public class PacienteController {
     PacienteService pacienteService;
 
 
-    @GetMapping
+    @GetMapping("/todos")
     public ResponseEntity<ArrayList<Paciente>> mostrarPacientes (){
         ArrayList<Paciente> listarPaciente = pacienteService.mostrarTodos();
         return ResponseEntity.ok(listarPaciente);
@@ -29,7 +29,7 @@ public class PacienteController {
         return pacienteService.mostrarPorId(id);
     }
 
-    @PostMapping
+    @PostMapping("guardar")
     public Paciente guardarPaciente(@RequestBody Paciente paciente){
         return pacienteService.guardar(paciente);
     }

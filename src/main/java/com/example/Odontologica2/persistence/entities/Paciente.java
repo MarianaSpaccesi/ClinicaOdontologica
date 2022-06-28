@@ -12,7 +12,8 @@ import java.util.Set;
 public class Paciente {
 
     @Id
-    @GeneratedValue(strategy =  GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "paciente_sequence", sequenceName = "paciente_sequence")
+    @GeneratedValue(strategy =  GenerationType.SEQUENCE, generator = "paciente_sequence")
     @Column(name = "paciente_id", nullable = false)
     private Integer id;
     private String nombre;
@@ -21,8 +22,9 @@ public class Paciente {
     private Date fechaIngreso;
 
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "domicilio_id")
+
     private Domicilio domicilio;
 
     @OneToMany(mappedBy = "paciente", fetch = FetchType.LAZY)

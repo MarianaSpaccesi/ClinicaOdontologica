@@ -18,19 +18,7 @@ public class Domicilio {
     private String localidad;
     private String provincia;
 
-    @OneToOne(mappedBy = "domicilio", cascade = CascadeType.ALL)
-    @JsonIgnore
-    private Paciente paciente;
 
-
-
-    public Paciente getPacientes() {
-        return paciente;
-    }
-
-    public void setPacientes(Paciente pacientes) {
-        this.paciente = pacientes;
-    }
 
     public Integer getId() {
         return id;

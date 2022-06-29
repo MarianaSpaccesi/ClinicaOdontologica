@@ -22,9 +22,8 @@ public class Paciente {
     private Date fechaIngreso;
 
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "domicilio_id")
-
     private Domicilio domicilio;
 
     @OneToMany(mappedBy = "paciente", fetch = FetchType.LAZY)

@@ -1,10 +1,7 @@
 package com.example.Odontologica2.persistence.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.Fetch;
-
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "turnos")
@@ -14,7 +11,7 @@ public class Turno {
     @GeneratedValue(strategy =  GenerationType.SEQUENCE, generator = "turno_sequence") //genera secuencia en turno, que los IDs tengan una secuencia propia
     @Column(name = "turno_id", nullable = false)
     private Integer id;
-    private Date date;
+    private LocalDate fecha;
 
     @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "odontologo_id")
@@ -28,8 +25,8 @@ public class Turno {
     public Turno() {
     }
 
-    public Turno(Date date, Paciente paciente, Odontologo odontologo) {
-        this.date = date;
+    public Turno(LocalDate date, Paciente paciente, Odontologo odontologo) {
+        this.fecha = date;
         this.paciente = paciente;
         this.odontologo = odontologo;
     }
@@ -39,12 +36,12 @@ public class Turno {
         return id;
     }
 
-    public Date getDate() {
-        return date;
+    public LocalDate getFecha() {
+        return fecha;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setFecha(LocalDate fecha) {
+        this.fecha = fecha;
     }
 
     public Paciente getPaciente() {

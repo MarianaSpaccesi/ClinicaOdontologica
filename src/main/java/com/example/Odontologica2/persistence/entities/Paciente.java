@@ -3,7 +3,7 @@ package com.example.Odontologica2.persistence.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -19,7 +19,7 @@ public class Paciente {
     private String nombre;
     private String apellido;
     private String dni;
-    private Date fechaIngreso;
+    private LocalDate fechaIngreso;
 
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -68,11 +68,11 @@ public class Paciente {
         this.dni = dni;
     }
 
-    public Date getFechaIngreso() {
+    public LocalDate getFechaIngreso() {
         return fechaIngreso;
     }
 
-    public void setFechaIngreso(Date fechaIngreso) {
+    public void setFechaIngreso(LocalDate fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
 

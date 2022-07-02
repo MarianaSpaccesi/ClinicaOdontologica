@@ -1,0 +1,8 @@
+[2022-07-02 19:50:10] [ERROR] [TurnoService:36] No es posible guardar el turno.
+[2022-07-02 19:56:49] [ERROR] [TurnoService:36] No es posible guardar el turno.
+[2022-07-02 20:03:44] [ERROR] [PacienteService:34] No es posible guardar el paciente
+[2022-07-02 20:04:06] [INFO] [PacienteService:32] Se ha guardado el paciente correctamente.
+[2022-07-02 20:05:04] [ERROR] [OdontologoService:34] No es posible guardar el odontologo
+[2022-07-02 20:05:09] [INFO] [OdontologoService:32] Se ha guardado el odontologo correctamente.
+[2022-07-02 20:05:36] [ERROR] [TurnoService:37] No es posible guardar el turno.
+[2022-07-02 20:05:46] [INFO] [TurnoService:35] Se ha guardado el turno correctamente.

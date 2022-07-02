@@ -17,19 +17,24 @@ public class TurnoController {
     @Autowired
     TurnoService turnoService;
 
-    @GetMapping
+    @GetMapping("/todos")
     public ResponseEntity<ArrayList<Turno>> mostrarTurnos (){
         ArrayList<Turno> listarTurnos = turnoService.mostrarTodos();
         return ResponseEntity.ok(listarTurnos);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public Optional<Turno> mostrarTurnoPorId(@PathVariable Integer id){
         return turnoService.mostrarPorId(id);
     }
 
-    @PostMapping
+    @PostMapping("guardar")
     public Turno guardarTurno(@RequestBody Turno turno){
         return turnoService.guardar(turno);
+    }
+
+    @DeleteMapping("/{id}")
+    public void eliminarTurnoPorId(@PathVariable Integer id){
+        turnoService.eliminarPorId(id);
     }
 }

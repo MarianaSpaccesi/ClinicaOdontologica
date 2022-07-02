@@ -16,11 +16,11 @@ public class Turno {
     private Integer id;
     private Date date;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "odontologo_id")
     private Odontologo odontologo;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "paciente_id")
     private Paciente paciente;
 
@@ -34,21 +34,6 @@ public class Turno {
         this.odontologo = odontologo;
     }
 
-    public Odontologo getOdonto() {
-        return odontologo;
-    }
-
-    public void setOdonto(Odontologo odonto) {
-        this.odontologo = odonto;
-    }
-
-    public Paciente getPac() {
-        return paciente;
-    }
-
-    public void setPac(Paciente pac) {
-        this.paciente = pac;
-    }
 
     public Integer getId() {
         return id;

@@ -24,7 +24,7 @@ public class PacienteController {
         return ResponseEntity.ok(listarPaciente);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public Optional<Paciente> mostrarPacientePorId(@PathVariable Integer id){
         return pacienteService.mostrarPorId(id);
     }

@@ -19,18 +19,18 @@ public class OdontologoController {
     OdontologoService odontologoService;
 
 
-    @GetMapping
+    @GetMapping("/todos")
     public ResponseEntity<ArrayList<Odontologo>> mostrarOdontologo (){
         ArrayList<Odontologo> listarOdontologos = odontologoService.mostrarTodos();
         return ResponseEntity.ok(listarOdontologos);
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public Optional<Odontologo> mostrarOdontologoPorId(@PathVariable Integer id){
         return odontologoService.mostrarPorId(id);
     }
 
-    @PostMapping
+    @PostMapping("guardar")
     public Odontologo guardarOdontologo(@RequestBody Odontologo odontologo){
         return odontologoService.guardar(odontologo);
     }

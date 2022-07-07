@@ -10,7 +10,7 @@ public class Turno {
     @SequenceGenerator(name = "turno_sequence", sequenceName = "turno_sequence")
     @GeneratedValue(strategy =  GenerationType.SEQUENCE, generator = "turno_sequence") //genera secuencia en turno, que los IDs tengan una secuencia propia
     @Column(name = "turno_id", nullable = false)
-    private Integer id;
+    private Long id;
     private LocalDate fecha;
 
     @ManyToOne(cascade = CascadeType.MERGE)
@@ -32,7 +32,7 @@ public class Turno {
     }
 
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 

@@ -14,7 +14,7 @@ import java.util.Optional;
 @Service
 public class TurnoService {
 
-    private static final org.apache.log4j.Logger logger = Logger.getLogger(TurnoService.class);
+    private static final Logger logger = Logger.getLogger(TurnoService.class);
 
     @Autowired
     private TurnoRepository repository;
@@ -25,7 +25,7 @@ public class TurnoService {
         return new ArrayList<>(repository.findAll());
     }
 
-    public Optional<Turno> mostrarPorId(Integer id){
+    public Optional<Turno> mostrarPorId(Long id){
         return repository.findById(id);
     }
 
@@ -39,7 +39,15 @@ public class TurnoService {
         return turno;
     }
 
-    public void eliminarPorId(Integer id){
+    public Turno actualizarTurno(Turno turno){
+        Turno actualizarTurno = repository.findById(turno.getId()).get();
+        actualizarTurno.setFecha(turno.getFecha());
+        actualizarTurno.setPaciente(turno.getPaciente());
+        actualizarTurno.setOdontologo(turno.getOdontologo());
+        return this.guardar(actualizarTurno);
+    }
+
+    public void eliminarPorId(Long id){
         repository.deleteById(id);
     }
 }

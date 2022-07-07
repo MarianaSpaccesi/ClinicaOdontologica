@@ -26,17 +26,17 @@ public class OdontologoController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Odontologo> mostrarOdontologoPorId(@PathVariable Integer id){
-        return odontologoService.mostrarPorId(id);
+    public ResponseEntity<Optional<Odontologo>> mostrarOdontologoPorId(@PathVariable Long id){
+        return ResponseEntity.ok(odontologoService.mostrarPorId(id));
     }
 
     @PostMapping("guardar")
-    public Odontologo guardarOdontologo(@RequestBody Odontologo odontologo){
-        return odontologoService.guardar(odontologo);
+    public ResponseEntity<Odontologo> guardarOdontologo(@RequestBody Odontologo odontologo){
+        return ResponseEntity.ok( odontologoService.guardar(odontologo));
     }
 
     @DeleteMapping("/{id}")
-    public void eliminarOdontologoPorId(@PathVariable Integer id){
+    public void eliminarOdontologoPorId(@PathVariable Long id){
         odontologoService.eliminarPorId(id);
     }
 }

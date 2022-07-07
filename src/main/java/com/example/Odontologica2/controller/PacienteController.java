@@ -25,17 +25,17 @@ public class PacienteController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Paciente> mostrarPacientePorId(@PathVariable Integer id){
-        return pacienteService.mostrarPorId(id);
+    public ResponseEntity<Optional<Paciente>> mostrarPacientePorId(@PathVariable Long id){
+        return ResponseEntity.ok(pacienteService.mostrarPorId(id));
     }
 
     @PostMapping("guardar")
-    public Paciente guardarPaciente(@RequestBody Paciente paciente){
-        return pacienteService.guardar(paciente);
+    public ResponseEntity<Paciente> guardarPaciente(@RequestBody Paciente paciente){
+        return ResponseEntity.ok(pacienteService.guardar(paciente));
     }
 
     @DeleteMapping("/{id}")
-    public void eliminarPacientePorId(@PathVariable Integer id){
+    public void eliminarPacientePorId(@PathVariable Long id){
         pacienteService.eliminarPorId(id);
     }
 }

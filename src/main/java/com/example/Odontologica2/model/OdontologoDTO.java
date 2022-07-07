@@ -2,16 +2,16 @@ package com.example.Odontologica2.model;
 
 public class OdontologoDTO {
 
-    private Integer id;
+    private Long id;
     private String nombre;
     private String apellido;
     private Integer matricula;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

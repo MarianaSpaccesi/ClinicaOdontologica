@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @Service
 public class PacienteService {
-    private static final org.apache.log4j.Logger logger = Logger.getLogger(PacienteService.class);
+    private static final Logger logger = Logger.getLogger(PacienteService.class);
 
     @Autowired
     private PacienteRepository repository;
@@ -22,7 +22,7 @@ public class PacienteService {
         return new ArrayList<>(repository.findAll());
     }
 
-    public Optional<Paciente> mostrarPorId(Integer id){
+    public Optional<Paciente> mostrarPorId(Long id){
         return repository.findById(id);
     }
 
@@ -36,7 +36,7 @@ public class PacienteService {
         return paciente;
     }
 
-    public void eliminarPorId(Integer id){
+    public void eliminarPorId(Long id){
         repository.deleteById(id);
     }
 }

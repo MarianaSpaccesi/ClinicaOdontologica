@@ -24,17 +24,22 @@ public class TurnoController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Turno> mostrarTurnoPorId(@PathVariable Integer id){
-        return turnoService.mostrarPorId(id);
+    public ResponseEntity<Optional<Turno>> mostrarTurnoPorId(@PathVariable Long id){
+        return ResponseEntity.ok(turnoService.mostrarPorId(id));
     }
 
     @PostMapping("guardar")
-    public Turno guardarTurno(@RequestBody Turno turno){
-        return turnoService.guardar(turno);
+    public ResponseEntity<Turno> guardarTurno(@RequestBody Turno turno){
+        return ResponseEntity.ok(turnoService.guardar(turno));
+    }
+
+    @PutMapping("modificar")
+    public ResponseEntity<Turno> modificarTurno(@RequestBody Turno turno){
+        return ResponseEntity.ok(turnoService.actualizarTurno(turno));
     }
 
     @DeleteMapping("/{id}")
-    public void eliminarTurnoPorId(@PathVariable Integer id){
+    public void eliminarTurnoPorId(@PathVariable Long id){
         turnoService.eliminarPorId(id);
     }
 }

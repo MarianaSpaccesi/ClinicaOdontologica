@@ -1,5 +1,7 @@
 package com.example.Odontologica2.model;
 
+import com.example.Odontologica2.persistence.entities.Domicilio;
+
 import java.util.Date;
 
 public class PacienteDTO {
@@ -49,4 +51,6 @@ public class PacienteDTO {
     public void setFechaIngreso(Date fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
+
+
 }

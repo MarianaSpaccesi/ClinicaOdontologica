@@ -14,7 +14,7 @@ public class Odontologo {
     @SequenceGenerator(name = "odontologo_sequence", sequenceName = "odontologo_sequence")
     @GeneratedValue(strategy =  GenerationType.SEQUENCE, generator = "odontologo_sequence")
     @Column(name = "odontologo_id", nullable = false)
-    private Integer id;
+    private Long id;
     private String nombre;
     private String apellido;
     private Integer matricula;
@@ -34,7 +34,7 @@ public class Odontologo {
         this.turnos = turnos;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 

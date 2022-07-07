@@ -15,7 +15,7 @@ public class Paciente {
     @SequenceGenerator(name = "paciente_sequence", sequenceName = "paciente_sequence")
     @GeneratedValue(strategy =  GenerationType.SEQUENCE, generator = "paciente_sequence")
     @Column(name = "paciente_id", nullable = false)
-    private Integer id;
+    private Long id;
     private String nombre;
     private String apellido;
     private String dni;
@@ -40,7 +40,7 @@ public class Paciente {
         this.turnos = turnos;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 

@@ -1,6 +1,5 @@
 package com.example.Odontologica2;
-import com.example.Odontologica2.service.TurnoService;
-import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,6 +8,8 @@ public class Odontologica2Application {
 
 
 	public static void main(String[] args) {
+		PropertyConfigurator.configure("log4j.properties");
+
 		SpringApplication.run(Odontologica2Application.class, args);
 	}
 

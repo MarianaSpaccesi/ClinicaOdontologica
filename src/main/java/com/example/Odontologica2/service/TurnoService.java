@@ -1,5 +1,4 @@
 package com.example.Odontologica2.service;
-import com.example.Odontologica2.model.TurnoDTO;
 import com.example.Odontologica2.persistence.entities.Turno;
 import com.example.Odontologica2.persistence.repository.TurnoRepository;
 import org.apache.log4j.Logger;
@@ -40,11 +39,7 @@ public class TurnoService {
     }
 
     public Turno actualizarTurno(Turno turno){
-        Turno actualizarTurno = repository.findById(turno.getId()).get();
-        actualizarTurno.setFecha(turno.getFecha());
-        actualizarTurno.setPaciente(turno.getPaciente());
-        actualizarTurno.setOdontologo(turno.getOdontologo());
-        return this.guardar(actualizarTurno);
+        return this.guardar(turno);
     }
 
     public void eliminarPorId(Long id){

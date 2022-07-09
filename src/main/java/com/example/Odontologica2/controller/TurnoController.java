@@ -1,6 +1,4 @@
 package com.example.Odontologica2.controller;
-
-import com.example.Odontologica2.model.TurnoDTO;
 import com.example.Odontologica2.persistence.entities.Turno;
 import com.example.Odontologica2.service.TurnoService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Optional;
+
+
 @Service
 public class OdontologoService {
 
@@ -37,6 +39,10 @@ public class OdontologoService {
             logger.error("No es posible guardar el odontologo");
         }
         return odontologo;
+    }
+
+    public Odontologo actualizarOdontologo(Odontologo odontologo){
+        return this.guardar(odontologo);
     }
 
     public void eliminarPorId(Long id){

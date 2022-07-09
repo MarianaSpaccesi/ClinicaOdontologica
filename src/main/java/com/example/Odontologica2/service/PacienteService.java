@@ -1,6 +1,4 @@
 package com.example.Odontologica2.service;
-
-import com.example.Odontologica2.model.PacienteDTO;
 import com.example.Odontologica2.persistence.entities.Paciente;
 import com.example.Odontologica2.persistence.repository.PacienteRepository;
 import org.apache.log4j.Logger;
@@ -34,6 +32,10 @@ public class PacienteService {
             logger.error("No es posible guardar el paciente");
         }
         return paciente;
+    }
+
+    public Paciente actualizarPaciente(Paciente paciente){
+        return this.guardar(paciente);
     }
 
     public void eliminarPorId(Long id){

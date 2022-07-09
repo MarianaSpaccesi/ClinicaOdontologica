@@ -1,7 +1,6 @@
 package com.example.Odontologica2.controller;
-
-import com.example.Odontologica2.model.PacienteDTO;
 import com.example.Odontologica2.persistence.entities.Paciente;
+import com.example.Odontologica2.persistence.entities.Turno;
 import com.example.Odontologica2.service.PacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -32,6 +31,11 @@ public class PacienteController {
     @PostMapping("guardar")
     public ResponseEntity<Paciente> guardarPaciente(@RequestBody Paciente paciente){
         return ResponseEntity.ok(pacienteService.guardar(paciente));
+    }
+
+    @PutMapping("modificar")
+    public ResponseEntity<Paciente> modificarPaciente(@RequestBody Paciente paciente){
+        return ResponseEntity.ok(pacienteService.actualizarPaciente(paciente));
     }
 
     @DeleteMapping("/{id}")

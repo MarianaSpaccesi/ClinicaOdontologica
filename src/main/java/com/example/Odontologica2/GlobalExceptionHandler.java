@@ -15,7 +15,7 @@ public class GlobalExceptionHandler {
     private static final Logger logger = Logger.getLogger(GlobalExceptionHandler.class);
 
 
-    @ExceptionHandler
+    @ExceptionHandler(Exception.class)
     public ResponseEntity<?> todosLosErrores(Exception e, WebRequest req){
         logger.error(e.getMessage());
         return  new ResponseEntity<>("Error: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);

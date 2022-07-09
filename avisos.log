@@ -1,0 +1,11 @@
+[2022-07-08 23:52:33] [ERROR] [GlobalExceptionHandler:20] Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "todo"
+[2022-07-09 00:03:33] [INFO] [PacienteService:32] Se ha guardado el paciente correctamente.
+[2022-07-09 00:03:36] [ERROR] [GlobalExceptionHandler:20] Failed to convert value of type 'java.lang.String' to required type 'java.lang.Long'; nested exception is java.lang.NumberFormatException: For input string: "todo"
+[2022-07-09 00:03:45] [INFO] [OdontologoService:35] Se ha guardado el odontologo correctamente.
+[2022-07-09 00:04:01] [INFO] [TurnoService:35] Se ha guardado el turno correctamente.
+[2022-07-09 00:06:41] [INFO] [TurnoService:35] Se ha guardado el turno correctamente.
+[2022-07-09 00:07:36] [INFO] [TurnoService:35] Se ha guardado el turno correctamente.
+[2022-07-09 00:10:04] [INFO] [PacienteService:32] Se ha guardado el paciente correctamente.
+[2022-07-09 00:10:07] [INFO] [OdontologoService:35] Se ha guardado el odontologo correctamente.
+[2022-07-09 00:10:12] [INFO] [TurnoService:35] Se ha guardado el turno correctamente.
+[2022-07-09 00:10:25] [INFO] [TurnoService:35] Se ha guardado el turno correctamente.

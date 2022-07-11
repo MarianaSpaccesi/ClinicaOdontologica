@@ -1,4 +1,5 @@
 package com.example.Odontologica2.controller;
+import com.example.Odontologica2.exceptions.ResourceNotFoundExceptions;
 import com.example.Odontologica2.persistence.entities.Turno;
 import com.example.Odontologica2.service.TurnoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class TurnoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<Turno>> mostrarTurnoPorId(@PathVariable Long id){
+    public ResponseEntity<Optional<Turno>> mostrarTurnoPorId(@PathVariable Long id) throws ResourceNotFoundExceptions {
         return ResponseEntity.ok(turnoService.mostrarPorId(id));
     }
 

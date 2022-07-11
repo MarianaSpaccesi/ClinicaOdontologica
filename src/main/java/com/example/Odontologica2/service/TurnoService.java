@@ -1,4 +1,6 @@
 package com.example.Odontologica2.service;
+import com.example.Odontologica2.exceptions.GlobalResourceNotFoundExceptionsHandler;
+import com.example.Odontologica2.exceptions.ResourceNotFoundExceptions;
 import com.example.Odontologica2.persistence.entities.Turno;
 import com.example.Odontologica2.persistence.repository.TurnoRepository;
 import org.apache.log4j.Logger;
@@ -24,8 +26,13 @@ public class TurnoService {
         return new ArrayList<>(repository.findAll());
     }
 
-    public Optional<Turno> mostrarPorId(Long id){
-        return repository.findById(id);
+    public Optional<Turno> mostrarPorId(Long id) throws ResourceNotFoundExceptions {
+        Optional<Turno> turno = repository.findById(id);
+
+        if(!turno.isPresent()) {
+            new ResourceNotFoundExceptions("No se encontró el turno");
+        }
+        return turno;
     }
 
     public Turno guardar(Turno turno){
@@ -42,7 +49,7 @@ public class TurnoService {
         return this.guardar(turno);
     }
 
-    public void eliminarPorId(Long id){
+    public void eliminarPorId(Long id) {
         repository.deleteById(id);
     }
 }
